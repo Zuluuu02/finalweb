@@ -100,7 +100,7 @@ export default function Casual({ auth }) {
                   className="w-full h-full object-contain transition duration-300 transform group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 flex justify-center items-center transition-opacity duration-300 group-hover:opacity-100">
-                  <p className="text-white font-semibold">View Details</p>
+                  <p className="text-white font-semibold">View</p>
                 </div>
               </div>
             ))}
