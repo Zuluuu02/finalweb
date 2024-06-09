@@ -57,8 +57,8 @@ export default function Welcome({ auth }) {
                 <div className="absolute inset-0 bg-black opacity-70"></div>
                 <div className="max-w-2xl text-center relative z-10">
                     <header className="py-10">
-                        <h1 className="text-6xl font-extrabold mb-6">Get Your Next</h1>
-                        <p className="text-6xl font-extrabold mb-6">New Look Outfit</p>
+                        <h1 className="text-8xl font-extrabold mb-6">Get Your Next</h1>
+                        <p className="text-7xl font-extrabold mb-6">New Look Outfit</p>
                         <p className="text-lg font-semibold text-gray-100 mb-80">Find tons of ideas in one place, like browsing through a treasure trove of inspiration.</p>
                     </header>
                 </div>

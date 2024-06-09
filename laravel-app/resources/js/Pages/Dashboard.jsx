@@ -3,23 +3,23 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, usePage } from '@inertiajs/react';
 
 export default function Dashboard({ auth }) {
-    const categories = ['casual', 'semi-formal', 'formal', 'dress', 'style'];
     const { uploads } = usePage().props;
+
+    const customizedImages = [
+        'https://i.pinimg.com/736x/ea/f5/ac/eaf5ac6da2020b35553cc5c52bcf0813.jpg',
+        'https://i.pinimg.com/564x/e5/0e/11/e50e1124dd447682ccb3af2cb21df125.jpg',
+        'https://i.pinimg.com/564x/ad/e8/33/ade8338a666eda90997faaa9f8a43d4b.jpg',
+        'https://i.pinimg.com/564x/27/a3/c9/27a3c9e418b4aab8decd9f394f18a718.jpg',
+        'https://i.pinimg.com/564x/0a/c7/7d/0ac77dd09a529154dd2fbc246fd65c15.jpg',
+        'https://i.pinimg.com/564x/46/97/ec/4697ec2fadee5f494e24adaf217b280f.jpg',
+        'https://i.pinimg.com/564x/8b/33/6f/8b336fe625bcf96bc58af67c6db56585.jpg',
+        'https://i.pinimg.com/564x/2f/3c/6a/2f3c6ac9f02dd62b58c4ef61598e9b8c.jpg',
+        'https://i.pinimg.com/564x/81/88/26/81882608312d648df17695bc2aad3816.jpg',
+        'https://i.pinimg.com/564x/f4/ce/9e/f4ce9ef5d7becc100238c73e14d45e73.jpg'
+    ];
 
     const [isOpen, setIsOpen] = useState(false);
     const [modalImage, setModalImage] = useState('');
-    const [images, setImages] = useState([]);
-
-    useEffect(() => {
-        // Generate and set image URLs once
-        const generatedImages = [...Array(10)].map((_, index) => {
-            const category = categories[index % categories.length];
-            return `https://source.unsplash.com/random/1000x${Math.floor(
-                Math.random() * (1000 - 100 + 1) + 100
-            )}?${category}`;
-        });
-        setImages(generatedImages);
-    }, []);
 
     const handleImageClick = (imageSrc) => {
         setModalImage(imageSrc);
@@ -62,7 +62,7 @@ export default function Dashboard({ auth }) {
             <Head title="Dashboard" />
             <div className="max-w-screen-lg mx-auto px-4">
                 <div className="grid grid-cols-5 gap-4">
-                    {images.map((imageSrc, index) => (
+                    {customizedImages.map((imageSrc, index) => (
                         <div
                             key={index}
                             className="relative group overflow-hidden rounded-lg cursor-pointer"
