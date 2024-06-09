@@ -2,15 +2,6 @@ import React from 'react';
 import { Link, Head } from '@inertiajs/react';
 
 export default function Welcome({ auth }) {
-    const imageCategories = {
-        fashion: 'https://source.unsplash.com/800x600/?fashion',
-        style: 'https://source.unsplash.com/800x600/?style',
-        clothing: 'https://source.unsplash.com/800x600/?clothing',
-        outfit: 'https://source.unsplash.com/800x600/?outfit',
-        accessories: 'https://source.unsplash.com/800x600/?accessories',
-        shoes: 'https://source.unsplash.com/800x600/?shoes'
-    };
-
     return (
         <>
             <Head title="LeSunshine - Discover Everything" />
@@ -23,9 +14,6 @@ export default function Welcome({ auth }) {
                         </div>
                     </div>
                     <nav className="flex items-center space-x-4">
-                        <Link href="#" className="text-black hover:text-gray-500 font-bold transition duration-200">Explore</Link>
-                        <Link href="#" className="text-black hover:text-gray-500 font-bold transition duration-200">About</Link>
-                        <Link href="#" className="text-black hover:text-gray-500 font-bold transition duration-200">Blog</Link>
                         {auth.user ? (
                             <Link
                                 href={route('dashboard')}
@@ -65,20 +53,32 @@ export default function Welcome({ auth }) {
             </div>
             <div className="bg-white py-16">
                 <div className="container mx-auto px-6">
-                    <h2 className="text-4xl font-extrabold text-black text-center mb-8">More Inspirations</h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {Object.entries(imageCategories).map(([category, url], index) => (
-                            <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg">
-                                <img 
-                                    src={url} 
-                                    alt={`Fashion inspiration ${index + 1}`} 
-                                    className="w-full h-auto transition duration-300 transform hover:scale-105" 
-                                />
-                                <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition duration-300 flex items-center justify-center text-white font-bold text-xl">
-                                    {category.charAt(0).toUpperCase() + category.slice(1)}
-                                </div>
-                            </div>
-                        ))}
+                    <h2 className="text-2xl font-bold mb-8 text-center">Discover Our Outfit Inspirations</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div className="mb-8">
+                            <h3 className="text-xl font-semibold mb-2">Casual Wear</h3>
+                            <p className="text-gray-700">Explore trendy and comfortable casual outfits perfect for daily wear. From chic tops to stylish jeans, find your next favorite casual look here.</p>
+                        </div>
+                        <div className="mb-8">
+                            <h3 className="text-xl font-semibold mb-2">Office Attire</h3>
+                            <p className="text-gray-700">Discover stylish and professional office attire that makes an impression. Our collection includes blazers, trousers, and elegant dresses for a sophisticated work wardrobe.</p>
+                        </div>
+                        <div className="mb-8">
+                            <h3 className="text-xl font-semibold mb-2">Evening Wear</h3>
+                            <p className="text-gray-700">Find glamorous evening wear options for your next night out or special event. From dazzling dresses to chic jumpsuits, our collection ensures you shine.</p>
+                        </div>
+                        <div className="mb-8">
+                            <h3 className="text-xl font-semibold mb-2">Sportswear</h3>
+                            <p className="text-gray-700">Stay fit and fashionable with our range of sportswear. Whether it’s yoga pants, running gear, or athletic tops, our collection supports your active lifestyle.</p>
+                        </div>
+                        <div className="mb-8">
+                            <h3 className="text-xl font-semibold mb-2">Accessories</h3>
+                            <p className="text-gray-700">Complete your look with our curated selection of accessories. From statement jewelry to stylish bags, find the perfect pieces to enhance any outfit.</p>
+                        </div>
+                        <div className="mb-8">
+                            <h3 className="text-xl font-semibold mb-2">Footwear</h3>
+                            <p className="text-gray-700">Step out in style with our footwear collection. Discover everything from casual sneakers to elegant heels, perfect for any occasion.</p>
+                        </div>
                     </div>
                     <div className="mt-12 flex justify-center items-center">
                         <div className="text-sm text-gray-900 text-center">
